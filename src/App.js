@@ -69,10 +69,11 @@ class App {
    */
   playGameAndPrintMovement(CAR, TRY_NUM){
     const GAME_RESULT = new Array(CAR.length).fill(0);
+    Console.print("");
 
-    //전진 시도 횟수만큼 반복
     for(let i=0;i<TRY_NUM;i++){
-        //각 자동차마다 전진여부 정하기
+
+        //각 자동차마다 전진여부 정하고 출력
         CAR.forEach((carname, index) => {
             if(Random.pickNumberInRange(1,9)>=4){
                 GAME_RESULT[index]++;
@@ -81,6 +82,7 @@ class App {
             let output = `${carname} : ${dash}`;
             Console.print(output);
         })
+
         Console.print("");
     }
 
